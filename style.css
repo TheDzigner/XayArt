@@ -1,0 +1,110 @@
+*, ::before, ::after {
+  
+  margin :0;
+  padding: 0;
+  box-sizing: border-box ;
+}
+
+
+body {
+    font-size: 15pt;
+    height: 100vh ;
+    width: min(100%, 480px);
+    margin: 0 auto ;
+}
+
+section {
+  
+  display: grid ;
+  grid-template-columns: repeat(3,1fr);
+   grid-auto-rows: minmax(10rem,auto);
+   padding:.2em .2em 3.5em .2em;
+}
+
+section img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  outline: 2px solid #252525;
+  transition : opacity  .2s ease-in-out ;
+}
+
+section img.visible {
+  
+  opacity: 1 ;
+  transition : opacity  .2s ease-in-out ;
+}
+
+
+
+.openFullContainer {
+  
+  position :fixed ;
+  top: 3%;
+  left: 1%;
+  z-index: 10;
+  transform: translate(-1%, -3%), scale(0);
+  width: 98%;
+  height: 45rem;
+  opacity: 0;
+  visibility: hidden ;
+  transition:.3s ease opacity  cubic-bezier(0.86, 0, 0.07, 1);
+  border-radius :1em;
+  overflow: hidden ;
+  background-color: #FFFFFF ;
+  box-shadow: 0 0 70px 10px rgba(3,3,3,5);
+}
+
+.openFullContainer button 
+{
+  display: block;
+  position: absolute ;
+  right: 2%;
+  top: 2%;
+  background-color :#FFFFFF;
+  box-shadow :0 0 7px rgba(3,3,3,.3);
+  padding :.3em .5em;
+  outline :none ;
+  border: none ;
+  border-radius :50%;
+  text-align: center ;
+}
+
+
+.openFullContainer.visible { 
+  
+  opacity: 1;
+  visibility: visible ;
+}
+
+.openFullContainer img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover ;
+}
+
+
+#randomize {
+  
+  position :fixed;
+  bottom: 2%;
+  left :40%;
+  outline :none ;
+  border :none ;
+  background-color : #FFFFFF;
+  padding: 1em;
+  border-radius :50%;
+  box-shadow :0 0 7px rgba(183,185,190,.5);
+  opacity :0 ;
+  visibility: hidden ;
+ transition: opacity .2s ease-in-out ;
+}
+
+#randomize.active {
+  
+  opacity: 1;
+  visibility: visible ;
+  transition: opacity .2s ease-in-out ;
+}
