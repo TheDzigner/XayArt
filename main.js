@@ -11,7 +11,7 @@ const randomizeBtn = document.getElementById('randomize');
 let allImages ;
 let timeout ;
 
-import config from "./config.js";
+import config from "/config.js";
 
 
 const API_KEY = config.apiKey
