@@ -11,7 +11,10 @@ const randomizeBtn = document.getElementById('randomize');
 let allImages ;
 let timeout ;
 
-const API_KEY = 'jBgrP-JjOhPr68fMKkK1ezRKDrFguxTh-v0_wevLqkE'
+import config from "./config.js";
+
+
+const API_KEY = config.apiKey
 ;
 const API_URL = `https://api.unsplash.com/photos/random/?count=30&client_id=${API_KEY}`
 
@@ -127,8 +130,8 @@ window.addEventListener('scroll', function() {
 
 const options = {
   root : null, 
-  rootMargin : '-10% 0px 0px 0px',
-  threshold : 1
+  rootMargin : '-20% 0px 0px 0px',
+  threshold : 0.5
 }
 
 function getImages(images){
